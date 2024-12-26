@@ -103,6 +103,8 @@ module Parsing =
                 <|> string' "-bg"
                 <|> string' "--pause"
                 <|> string' "-p"
+                <|> string' "--alarm"
+                <|> string' "-a"
 
             let withoutTerminator = neg (spaces <&> names) <&> neg end'
             let withTerminator = pos (spaces <&> names) <|> pos end'
