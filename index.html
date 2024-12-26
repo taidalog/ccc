@@ -1,5 +1,5 @@
 <!--
-  ccc Version 0.10.0
+  ccc Version 0.11.0
   https://github.com/taidalog/ccc
   Copyright (c) 2023-2024 taidalog
   This software is licensed under the MIT License.
@@ -60,7 +60,11 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'G-M1K3JX5RWM');
+    if (window.location.hostname === "localhost") {
+      gtag('config', 'G-M1K3JX5RWM', { 'debug_mode': true });
+    } else {
+      gtag('config', 'G-M1K3JX5RWM');
+    }
   </script>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="src/App.fs.js"></script>
@@ -78,6 +82,9 @@
       </span>
       <span id="stopButton" class="material-symbols-outlined" translate="no">
         stop
+      </span>
+      <span id="bellButton" class="material-symbols-outlined" translate="no">
+        music_note
       </span>
       <span id="helpButton" class="material-symbols-outlined help-button" translate="no">
         help
@@ -196,7 +203,7 @@
   <footer>
     <small translate="no">&copy; 2023-2024 <a href="https://taidalog.github.io/">taidalog</a></small>
     <small translate="no">
-      <a href="https://github.com/taidalog/ccc/releases">Version 0.10.0</a></small>
+      <a href="https://github.com/taidalog/ccc/releases">Version 0.11.0</a></small>
     <small translate="no"><a href="https://github.com/taidalog/ccc/blob/main/README.ja.md"
         target="_blank">README</a></small>
     <small><a href="#" id="informationPolicyLink">情報の外部送信について</a></small>
